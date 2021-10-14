@@ -1,0 +1,18 @@
+{% extends 'layout/app.twig' %}
+
+{% block body %}
+<h1>animaux</h1>
+<div class="row">
+        {% for animal in animaux %}
+            <div class="col col-md-4">
+                <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{animal.nom}}</h5>
+                    <p class="card-text">{{animal.toString()}}</p>
+                    <a href="#" class="btn btn-primary" {% if animal.adopte != "1" %} disabled {% endif %}>Go somewhere</a>
+                </div>
+                </div>
+            </div>
+        {% endfor %}
+</div>
+{% endblock %}
